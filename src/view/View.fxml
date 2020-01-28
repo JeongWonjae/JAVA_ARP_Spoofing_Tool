@@ -1,51 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- 편하게 임포트 하기 *?를 사용, 씬 아래의 모든 것들을 임포트해줌 -->
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.collections.*?>
 
-
-<!-- 태그들은 내부적으로 속성을 가짐, prefH는 높이, prefW는 너비
-chiledren 태그는 자식태그, 리스트, 버튼, 텍스트공간을 만들어줌
-layout X,Y좌표는 부모의 공간에서 좌표를 잡아줌 --> <!-- 컨트롤러와 매핑을 해줌 컨트롤러 자바파일과 -->
-<AnchorPane prefHeight="480" prefWidth="800" fx:controller="controller.Controller" 
-	xmlns:fx="http://javafx.com/fxml/1">
+<!-- prefH=high, prefW=width, children is make place for list, button, text--> 
+<!-- mapping to controller.Controller -->
+<AnchorPane prefHeight="480" prefWidth="800" fx:controller="controller.Controller" xmlns:fx="http://javafx.com/fxml/1">
 	<children>
-	<!-- id값을 넣어줘야 하는데 이것은 실제로 화면에서 버튼을 눌렀을 때 id값으로 그 이벤트를 처리함
-	 -->
-		<ListView fx:id="networkListView" layoutX="15" layoutY="14" 
-			prefHeight="86" prefWidth="462">
-			<items> <!-- 네트워크 장비들이 하나의 아이템이 됨 -->
+	<!-- handle event using 'id' value-->
+	
+		<!-- Choose network device -->
+		<ListView fx:id="networkListView" layoutX="15" layoutY="14" prefHeight="86" prefWidth="462">
+			<items>
+				<!-- network devices -->
 				<FXCollections fx:factory="observableArrayList"/>
 			</items>
 		</ListView>
-		<!-- 버튼을 눌렀을 때 온액션으로 발생하는 이벤트를 처리 id값도 정의 -->
-		<Button fx:id="pickButton" onAction="#networkPickAction" layoutX="395" layoutY="112" 
-			prefHeight="29" prefWidth="82" text="PICK"></Button>
-		<!--  -->
-		<TextArea fx:id="textArea" editable="false" layoutX="15" 
-			layoutY="156" prefHeight="325" prefWidth="460"></TextArea>
+		
+		<!-- Pick button -->
+		<Button fx:id="pickButton" onAction="#networkPickAction" layoutX="395" layoutY="112" prefHeight="29" prefWidth="82" text="PICK"></Button>
+		
+		<!-- log console -->
+		<TextArea fx:id="textArea" editable="false" layoutX="15" layoutY="156" prefHeight="325" prefWidth="460"></TextArea>
+		
+		<!-- My IP -->
 		<Label layoutX="486" LayoutY="14" text="My IP">
 			<font>
 				<Font size ="15"/>
 			</font>
 		</Label>
+		
+		<!-- Sender IP -->
 		<Label layoutX="486" LayoutY="44" text="Sender IP">
 			<font>
 				<Font size ="15"/>
 			</font>
 		</Label>
+		
+		<!-- Target IP -->
 		<Label layoutX="486" LayoutY="75" text="Target IP">
 			<font>
 				<Font size ="15"/>
 			</font>
 		</Label>
+		
+		<!-- My IP -->
 		<TextField fx:id="myIP" layoutX="562" layoutY="12" prefHeight="23" prefWidth="175"/>
+		
+		<!-- Sender IP -->
 		<TextField fx:id="senderIP" layoutX="562" layoutY="44" prefHeight="23" prefWidth="175"/>
+		
+		<!-- Target IP -->
 		<TextField fx:id="targetIP" layoutX="562" layoutY="76" prefHeight="23" prefWidth="175"/>
-		<Button fx:id="getMACButton" onAction="#getMACAction" layoutX="654" layoutY="112" 
-			prefHeight="29" prefWidth="82" text="START"></Button>
+		
+		<!-- Start button -->
+		<Button fx:id="getMACButton" onAction="#getMACAction" layoutX="654" layoutY="112" prefHeight="29" prefWidth="82" text="START"></Button>
 	</children>
 </AnchorPane>

@@ -1,5 +1,4 @@
-content_assist_proposals_background=255,255,255
-content_assist_proposals_foreground=0,0,0
+content_assist_number_of_computers=17
 eclipse.preferences.version=1
 org.eclipse.jdt.ui.formatterprofiles.version=15
 org.eclipse.jdt.ui.text.code_templates_migrated=true

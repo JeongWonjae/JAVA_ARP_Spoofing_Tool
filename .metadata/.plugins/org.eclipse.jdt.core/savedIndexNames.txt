@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+D:\Eclipse-workspace\JavaFX ARP Spoofing\.metadata\.plugins\org.eclipse.jdt.core
+1361623564.index
+111337219.index
